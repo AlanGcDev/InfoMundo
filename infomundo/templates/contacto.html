@@ -1,0 +1,21 @@
+{% extends "layout_term.html" %}
+{% block titulo %}Contactanos{% endblock %}
+
+{% block container %}
+<div class="contacto">
+    <h2>Contáctanos <iconify-icon icon="icon-park-twotone:phone-call"></iconify-icon></h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <small class="text-danger">{{ field.errors|striptags }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Enviar <iconify-icon icon="streamline:send-email-solid"></iconify-icon></button>
+    </form>
+</div>
+{% endblock %}

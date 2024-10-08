@@ -1,0 +1,78 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" type="image/png" href="{% static "img/favicon-48x48.png" %} " sizes="48x48" />
+        <link rel="icon" type="image/svg+xml" href="{% static "img/favicon.svg" %}" />
+        <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" />    
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/apple-touch-icon.png" %}" />
+        <link rel="manifest" href="{% static "img/site.webmanifest" %}" />
+        <title>{% block titulo %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "css/main.css" %}">
+        <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    </head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W1CFTBDWTT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W1CFTBDWTT');
+</script>
+    <body>
+        <nav>
+            <a href="/"><img loading="lazy" src="{% static "img/infomundo.webp" %}" alt=""></a>
+            <ul>
+                <li><a href="/"><iconify-icon icon="lets-icons:home-duotone"></iconify-icon>Inicio</a></li>
+                <li><a href="{% url "juegos" %}"><iconify-icon icon="solar:gamepad-bold-duotone"></iconify-icon>Juegos</a></li>
+                <li><a href="{% url "noticias" %}"><iconify-icon icon="pepicons-print:internet-circle"></iconify-icon>Noticias</a></li>
+                <li><a href="{% url "deportes" %}"><iconify-icon icon="fluent:sport-soccer-20-filled"></iconify-icon>Deportes</a></li>
+                <li><a href="{% url "contacto" %}"><iconify-icon icon="icon-park-twotone:phone-call"></iconify-icon>Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="content-1">
+
+            </div>
+            <div class="content">
+                {% block container %}{% endblock %}
+            </div>
+             
+
+            <div class="content-2">
+                
+            </div>
+        </div>
+       
+
+        <footer>
+            <div class="logo">
+                <a href="/"><img loading="lazy" src="{% static "img/infomundo.webp" %}" alt=""></a>
+                <p>©️2024 <a href="/">InfoMundo</a>. <br> Todos Los Derechos Reservados</p>
+            </div>
+            <div class="info-footer">
+                <div class="redes">
+                    <a href="#"><iconify-icon icon="ic:baseline-facebook"></iconify-icon></a>
+                    <a href="#"><iconify-icon icon="lucide:instagram"></iconify-icon></a>
+                    <a href="#"><iconify-icon icon="prime:twitter"></iconify-icon></a>
+                    <a href="#"><iconify-icon icon="mdi:youtube"></iconify-icon></a>
+                    <a href="#"><iconify-icon icon="ant-design:tik-tok-outlined"></iconify-icon></a>
+                </div>
+                <div class="term">
+                    <a href="{% url "terminos" %}">Terminos Condiciones</a>
+                    <a href="{% url "uso_content" %}">Uso de Contenido</a>
+                    <a href="{% url "nosotros" %}">Sobre Nosotros</a>
+                    <a href="{% url "contacto" %}">Contacto</a>
+                </div>
+            </div>
+        </footer>
+        <script src="{% static "js/main.js" %}" async defer></script>
+    </body>
+</html> 

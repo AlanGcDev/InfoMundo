@@ -1,0 +1,10 @@
+{% extends "layout_term.html" %}
+{% block titulo %}Correo Enviado{% endblock %}
+
+{% block container %}
+<div class="contacto">
+    <h2>¡Gracias por contactarnos!</h2>
+    <p>Hemos recibido tu mensaje y te responderemos pronto.</p>
+    <a href="{% url 'index' %}" class="btn btn-primary">Volver al inicio</a>
+</div>
+{% endblock %}
