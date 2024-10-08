@@ -86,8 +86,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Carpeta donde se guardarán los archivos recolectados
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Archivos estáticos propios
+
+# Directorio donde se almacenarán los archivos estáticos compilados
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Directorios adicionales para buscar archivos estáticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]  # Archivos estáticos propios
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # WhiteNoise para producción
 
 # Media files
