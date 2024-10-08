@@ -1,7 +1,9 @@
 import os
 from django.core.wsgi import get_wsgi_application
+from whitenoise import WhiteNoise
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'App.settings')
 
 application = get_wsgi_application()
-app = application
+application = WhiteNoise(application, root='staticfiles')
+application.add_files('staticfiles', prefix='static/')
