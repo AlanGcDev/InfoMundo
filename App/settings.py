@@ -92,7 +92,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'infomundo/static'),  # Verifica que esta ruta exista
 ]
 
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
