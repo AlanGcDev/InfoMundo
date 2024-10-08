@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'A18mxnrGVt-BZq3IqdIjd5fZlEAny_S5vCKMhc_xag0YbrguyEgbgXtADsH9Yw5EDu4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app']
 
@@ -86,7 +86,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # carpeta donde se guardarán los archivos recolectados
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Carpeta donde se guardarán los archivos recolectados
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Archivos estáticos propios
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # WhiteNoise para producción
 

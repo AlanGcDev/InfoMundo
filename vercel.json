@@ -13,13 +13,12 @@
       "dest": "/static/$1"
     },
     {
+      "src": "/media/(.*)",
+      "dest": "/media/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "App/wsgi.py"
     }
-    
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "App.settings"
-  }
-  
+  ]
 }
