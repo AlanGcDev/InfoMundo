@@ -8,4 +8,4 @@ echo "Make migrations..."
 /opt/vercel/python3/bin/python3 manage.py migrate
 
 echo "Collect static..."
-/opt/vercel/python3/bin/python3 manage.py collectstatic --noinput --clear
+/opt/vercel/python3/bin/python3 manage.py collectstatic
