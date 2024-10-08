@@ -84,20 +84,12 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-
-# Directorio donde se almacenarán los archivos estáticos compilados
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Directorios adicionales para buscar archivos estáticos
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]  # Archivos estáticos propios
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # WhiteNoise para producción
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Media files
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://infomundo.vercel.app/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

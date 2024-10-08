@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "App/wsgi.py",
@@ -7,7 +6,7 @@
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     },
     {
-      "src": "staticfiles/**",
+      "src": "static/**",
       "use": "@vercel/static"
     }
   ],
@@ -17,12 +16,11 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/media/(.*)",
-      "dest": "/media/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "App/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "App.settings"
+  }
 }
