@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '*53H&St0]7BG;lCv{=y7Pd2c#o#s{w:pn5sml
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'  # Cambiar a False en producción
 
 # Cambia ALLOWED_HOSTS para Render
-ALLOWED_HOSTS = ['your-app-name.onrender.com', 'localhost', '127.0.0.1']  # Cambia 'your-app-name' por el nombre real de tu app
+ALLOWED_HOSTS = ['infomundo.up.railway.app', 'localhost', '127.0.0.1']  # Cambia 'your-app-name' por el nombre real de tu app
 
 # Application definition
 INSTALLED_APPS = [
